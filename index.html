@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>GIZMO Mobiles — Kochi's Happiest Phone Store | Phones, Accessories & Repairs</title>
+<meta name="description" content="GIZMO Mobiles in Edappally, Kochi — every brand of smartphone, genuine accessories, same-day repairs, no-cost EMI and the best exchange value. Visit us or message on WhatsApp." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ink:#16142A;
+    --paper:#F4F3FB;
+    --card:#FFFFFF;
+    --indigo:#5B2BFF;
+    --coral:#FF5470;
+    --sun:#FFB23E;
+    --mint:#12D8A0;
+    --sky:#3FA9FF;
+    --wa:#25D366;
+    --muted:#605C7A;
+    --shadow:6px 6px 0 var(--ink);
+    --shadow-lg:9px 9px 0 var(--ink);
+    --bd:2.5px solid var(--ink);
+    --maxw:1180px;
+    --ease:cubic-bezier(.34,1.4,.5,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--paper);color:var(--ink);
+    font-family:"DM Sans",system-ui,sans-serif;line-height:1.6;overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(var(--ink) .6px,transparent .6px);
+    background-size:26px 26px;background-position:-13px -13px;background-attachment:fixed;
+  }
+  body::before{content:"";position:fixed;inset:0;background:var(--paper);opacity:.94;z-index:-1}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  section{position:relative}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+
+  h1,h2,h3{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;line-height:1.02;letter-spacing:-.02em}
+  .label{font-family:"DM Mono",monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:500}
+
+  /* ---------- buttons ---------- */
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:15px;
+    padding:14px 24px;border-radius:14px;border:var(--bd);cursor:pointer;
+    box-shadow:var(--shadow);transition:transform .18s var(--ease),box-shadow .18s var(--ease);
+    font-family:"DM Sans",sans-serif;white-space:nowrap;background:var(--card);color:var(--ink);
+  }
+  .btn svg{width:18px;height:18px}
+  .btn:hover{transform:translate(-2px,-2px);box-shadow:var(--shadow-lg)}
+  .btn:active{transform:translate(3px,3px);box-shadow:1px 1px 0 var(--ink)}
+  .btn-wa{background:var(--wa);color:#04210f}
+  .btn-indigo{background:var(--indigo);color:#fff}
+  .btn-coral{background:var(--coral);color:#fff}
+  .btn-sun{background:var(--sun);color:var(--ink)}
+
+  /* ---------- announcement ticker ---------- */
+  .ticker{background:var(--ink);color:var(--paper);overflow:hidden;padding:9px 0;border-bottom:var(--bd)}
+  .ticker-track{display:flex;gap:40px;width:max-content;animation:tick 26s linear infinite;font-family:"DM Mono",monospace;font-size:13px;letter-spacing:.08em}
+  .ticker-track span{display:flex;align-items:center;gap:40px;white-space:nowrap}
+  .ticker-track b{color:var(--sun);font-weight:500}
+  @keyframes tick{to{transform:translateX(-50%)}}
+
+  /* ---------- nav ---------- */
+  header{position:sticky;top:0;z-index:60;background:var(--card);border-bottom:var(--bd)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .logo{display:flex;align-items:center;gap:10px;font-family:"Bricolage Grotesque";font-weight:800;font-size:23px}
+  .logo .mark{width:36px;height:36px;border-radius:11px;background:var(--coral);border:var(--bd);display:grid;place-items:center;box-shadow:3px 3px 0 var(--ink);transform:rotate(-6deg)}
+  .logo .mark span{font-family:"Bricolage Grotesque";font-weight:800;color:#fff;font-size:19px;transform:rotate(6deg)}
+  .nav-links{display:flex;align-items:center;gap:30px}
+  .nav-links a{font-size:15px;font-weight:600;color:var(--ink);position:relative;padding:4px 0}
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:-2px;height:3px;width:0;background:var(--indigo);border-radius:2px;transition:width .25s var(--ease)}
+  .nav-links a:hover::after{width:100%}
+  .nav-cta{display:flex;align-items:center;gap:12px}
+  .burger{display:none;background:var(--card);border:var(--bd);border-radius:11px;padding:8px;cursor:pointer;box-shadow:3px 3px 0 var(--ink)}
+  .burger span{display:block;width:20px;height:2.5px;background:var(--ink);margin:4px 0;border-radius:2px}
+  .mobile-menu{display:none}
+
+  /* ---------- hero ---------- */
+  .hero{padding:64px 0 80px}
+  .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:54px;align-items:center}
+  .hero .pill-tag{display:inline-flex;align-items:center;gap:8px;background:var(--mint);border:var(--bd);border-radius:99px;padding:7px 15px;font-family:"DM Mono";font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;box-shadow:3px 3px 0 var(--ink)}
+  .hero h1{font-size:clamp(44px,6.6vw,80px);margin:22px 0 20px}
+  .hero h1 .hl{position:relative;white-space:nowrap}
+  .hero h1 .hl::after{content:"";position:absolute;left:-2%;right:-2%;bottom:6%;height:34%;background:var(--sun);z-index:-1;border-radius:6px;transform:rotate(-1.2deg)}
+  .hero p.lead{font-size:clamp(16px,1.7vw,19px);color:var(--muted);max-width:500px;margin-bottom:32px;font-weight:500}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:14px}
+
+  .hero-visual{position:relative}
+  .photo-card{border:var(--bd);border-radius:26px;overflow:hidden;box-shadow:var(--shadow-lg);background:var(--card);aspect-ratio:4/4.4;transform:rotate(1.4deg)}
+  .photo-card img{width:100%;height:100%;object-fit:cover}
+  .sticker{position:absolute;border:var(--bd);border-radius:16px;padding:12px 16px;background:var(--card);box-shadow:var(--shadow);font-weight:700;display:flex;align-items:center;gap:9px;font-size:14px}
+  .st-rating{top:-22px;left:-18px;background:var(--sun);transform:rotate(-7deg)}
+  .st-rating .big{font-family:"Bricolage Grotesque";font-size:26px;font-weight:800;line-height:1}
+  .st-repair{bottom:64px;right:-26px;background:var(--coral);color:#fff;transform:rotate(5deg)}
+  .st-emi{bottom:-20px;left:24px;background:var(--sky);color:var(--ink);transform:rotate(-4deg)}
+
+  /* ---------- trust strip ---------- */
+  .trust{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;padding-bottom:18px}
+  .trust .t{display:inline-flex;align-items:center;gap:10px;background:var(--card);border:var(--bd);border-radius:99px;padding:11px 20px;font-weight:700;font-size:14px;box-shadow:4px 4px 0 var(--ink)}
+  .trust .dot{width:11px;height:11px;border-radius:50%;border:2px solid var(--ink)}
+
+  /* ---------- brand ticker strip ---------- */
+  .brands{background:var(--indigo);border-top:var(--bd);border-bottom:var(--bd);overflow:hidden;padding:20px 0}
+  .brands-track{display:flex;gap:54px;width:max-content;animation:tick 30s linear infinite;align-items:center}
+  .brands:hover .brands-track{animation-play-state:paused}
+  .brands-track span{font-family:"Bricolage Grotesque";font-weight:700;font-size:24px;color:#fff;white-space:nowrap;display:flex;align-items:center;gap:54px;opacity:.92}
+  .brands-track i{font-style:normal;color:var(--sun)}
+
+  /* ---------- generic section ---------- */
+  .sec{padding:92px 0}
+  .sec-head{max-width:660px;margin-bottom:48px}
+  .sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
+  .sec-head h2{font-size:clamp(32px,4.4vw,52px);margin:14px 0 12px}
+  .sec-head p{color:var(--muted);font-size:17px;font-weight:500}
+  .eyebrow-tag{display:inline-block;background:var(--card);border:var(--bd);border-radius:99px;padding:6px 14px;box-shadow:3px 3px 0 var(--ink);color:var(--indigo)}
+
+  /* ---------- about ---------- */
+  .about-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:54px;align-items:center}
+  .about-media{border:var(--bd);border-radius:24px;overflow:hidden;box-shadow:var(--shadow-lg);aspect-ratio:5/4;transform:rotate(-1.4deg)}
+  .about-media img{width:100%;height:100%;object-fit:cover}
+  .about-grid .body p{color:var(--muted);font-size:16px;margin-bottom:16px;font-weight:500}
+  .checklist{list-style:none;margin-top:20px;display:grid;gap:13px}
+  .checklist li{display:flex;align-items:center;gap:13px;font-weight:600}
+  .checklist .tick{width:28px;height:28px;border-radius:9px;border:var(--bd);display:grid;place-items:center;flex:none;box-shadow:2px 2px 0 var(--ink)}
+  .checklist li:nth-child(1) .tick{background:var(--mint)}
+  .checklist li:nth-child(2) .tick{background:var(--sun)}
+  .checklist li:nth-child(3) .tick{background:var(--coral)}
+  .checklist .tick svg{width:15px;height:15px}
+
+  /* ---------- services bento ---------- */
+  .bento{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .scard{border:var(--bd);border-radius:22px;padding:28px;box-shadow:var(--shadow);transition:transform .18s var(--ease),box-shadow .18s var(--ease);background:var(--card)}
+  .scard:hover{transform:translate(-3px,-3px);box-shadow:var(--shadow-lg)}
+  .scard:nth-child(1){background:#EAF0FF}
+  .scard:nth-child(2){background:#FFEFF2}
+  .scard:nth-child(3){background:#FFF6E6}
+  .scard:nth-child(4){background:#E6FBF4}
+  .scard:nth-child(5){background:#EFEBFF}
+  .scard:nth-child(6){background:#E9F6FF}
+  .scard .ic{width:56px;height:56px;border-radius:15px;border:var(--bd);display:grid;place-items:center;font-size:27px;background:var(--card);box-shadow:3px 3px 0 var(--ink);margin-bottom:18px}
+  .scard h3{font-size:21px;margin-bottom:8px}
+  .scard p{color:var(--muted);font-size:15px;font-weight:500}
+
+  /* ---------- featured phones ---------- */
+  .phones{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .pcard{border:var(--bd);border-radius:22px;overflow:hidden;box-shadow:var(--shadow);background:var(--card);transition:transform .18s var(--ease),box-shadow .18s var(--ease)}
+  .pcard:hover{transform:translate(-3px,-3px);box-shadow:var(--shadow-lg)}
+  .pcard .pic{aspect-ratio:1/1;overflow:hidden;border-bottom:var(--bd);position:relative}
+  .pcard .pic img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease)}
+  .pcard:hover .pic img{transform:scale(1.06)}
+  .pcard .ptag{position:absolute;top:12px;left:12px;background:var(--ink);color:#fff;border-radius:99px;padding:5px 12px;font-family:"DM Mono";font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+  .pcard .body{padding:20px}
+  .pcard h3{font-size:20px;margin-bottom:12px}
+  .specs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+  .specs span{font-size:12px;font-family:"DM Mono";font-weight:500;border:2px solid var(--ink);border-radius:99px;padding:4px 11px}
+  .ask{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14px;color:#04210f;background:var(--wa);border:var(--bd);border-radius:11px;padding:10px 16px;box-shadow:3px 3px 0 var(--ink);transition:transform .15s var(--ease)}
+  .ask:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--ink)}
+  .ask svg{width:16px;height:16px}
+
+  /* ---------- gallery ---------- */
+  .gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:195px;gap:16px}
+  .gal{position:relative;border:var(--bd);border-radius:18px;overflow:hidden;box-shadow:var(--shadow)}
+  .gal img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease)}
+  .gal:hover img{transform:scale(1.07)}
+  .gal .cap{position:absolute;left:10px;bottom:10px;background:var(--card);border:var(--bd);border-radius:10px;padding:6px 12px;font-family:"DM Mono";font-size:11.5px;font-weight:500;letter-spacing:.04em;box-shadow:3px 3px 0 var(--ink)}
+  .g-wide{grid-column:span 2}
+  .g-tall{grid-row:span 2}
+  .imgfb{width:100%;height:100%;display:grid;place-items:center;text-align:center}
+  .imgfb b{font-family:"DM Mono";font-size:12px;letter-spacing:.08em;background:var(--card);border:var(--bd);padding:6px 12px;border-radius:10px}
+
+  /* ---------- stats block ---------- */
+  .stats-block{background:var(--coral);border-top:var(--bd);border-bottom:var(--bd)}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center;color:#fff}
+  .stats .num{font-family:"Bricolage Grotesque";font-weight:800;font-size:clamp(38px,5vw,58px);line-height:1}
+  .stats .lbl{font-family:"DM Mono";font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin-top:8px;opacity:.95}
+  .stats .div{position:relative}
+
+  /* ---------- testimonials ---------- */
+  .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .quote{border:var(--bd);border-radius:20px;padding:26px;box-shadow:var(--shadow);background:var(--card)}
+  .quote:nth-child(1){transform:rotate(-1deg);background:#FFF6E6}
+  .quote:nth-child(2){background:#E6FBF4}
+  .quote:nth-child(3){transform:rotate(1deg);background:#EAF0FF}
+  .quote .stars{font-size:16px;letter-spacing:2px;margin-bottom:12px}
+  .quote p{font-size:15px;font-weight:500;margin-bottom:18px}
+  .quote .who{display:flex;align-items:center;gap:12px}
+  .quote .av{width:44px;height:44px;border-radius:12px;border:var(--bd);display:grid;place-items:center;font-family:"Bricolage Grotesque";font-weight:800;flex:none;box-shadow:2px 2px 0 var(--ink)}
+  .quote:nth-child(1) .av{background:var(--coral);color:#fff}
+  .quote:nth-child(2) .av{background:var(--indigo);color:#fff}
+  .quote:nth-child(3) .av{background:var(--sun)}
+  .quote .nm{font-weight:700;font-size:14px}
+  .quote .mt{font-size:12px;color:var(--muted);font-weight:500}
+
+  /* ---------- visit / map ---------- */
+  .visit-grid{display:grid;grid-template-columns:1fr 1.12fr;gap:34px;align-items:stretch}
+  .info-card{border:var(--bd);border-radius:24px;padding:32px;box-shadow:var(--shadow-lg);background:var(--card);display:flex;flex-direction:column;gap:20px}
+  .info-row{display:flex;gap:15px;align-items:flex-start}
+  .info-row .ic{width:46px;height:46px;border-radius:13px;border:var(--bd);display:grid;place-items:center;flex:none;font-size:21px;box-shadow:2px 2px 0 var(--ink)}
+  .info-row:nth-child(1) .ic{background:var(--coral)}
+  .info-row:nth-child(2) .ic{background:var(--sun)}
+  .info-row:nth-child(3) .ic{background:var(--mint)}
+  .info-row .t{font-family:"DM Mono";font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--indigo);margin-bottom:3px;font-weight:500}
+  .info-row .d{font-weight:600;line-height:1.5}
+  .info-row .d span{color:var(--muted);font-weight:500;font-size:14px}
+  .info-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:4px}
+  .map-box{border:var(--bd);border-radius:24px;overflow:hidden;box-shadow:var(--shadow-lg);min-height:430px;background:var(--card)}
+  .map-box iframe{width:100%;height:100%;min-height:430px;border:0;display:block}
+
+  /* ---------- social band ---------- */
+  .social-band{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:26px;background:var(--indigo);border:var(--bd);border-radius:26px;padding:40px;box-shadow:var(--shadow-lg);color:#fff}
+  .social-band h3{font-size:clamp(24px,3.2vw,34px)}
+  .social-band .sub{opacity:.85;font-weight:500;margin-top:6px}
+  .socials{display:flex;gap:12px;flex-wrap:wrap}
+  .soc{width:54px;height:54px;border-radius:14px;border:2.5px solid #fff;display:grid;place-items:center;background:rgba(255,255,255,.1);transition:transform .18s var(--ease),background .18s}
+  .soc:hover{transform:translate(-2px,-2px);background:#fff}
+  .soc svg{width:24px;height:24px}
+  .soc .fg{stroke:#fff;fill:none}
+  .soc:hover .fg{stroke:var(--indigo)}
+  .soc .fgf{fill:#fff}
+  .soc:hover .fgf{fill:var(--indigo)}
+
+  /* ---------- footer ---------- */
+  footer{border-top:var(--bd);background:var(--card);padding:56px 0 28px;margin-top:90px}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:40px}
+  .foot-grid .intro p{color:var(--muted);font-size:14.5px;font-weight:500;max-width:320px;margin-top:14px}
+  .foot-col h4{font-family:"DM Mono";font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;font-weight:500}
+  .foot-col a{display:block;font-size:14.5px;font-weight:600;padding:5px 0;transition:color .2s}
+  .foot-col a:hover{color:var(--indigo)}
+  .foot-bottom{border-top:2px dashed var(--ink);padding-top:24px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;align-items:center;font-size:13px;color:var(--muted);font-weight:500}
+  .credit{display:inline-flex;align-items:center;gap:7px;font-weight:700;color:var(--ink)}
+  .credit a{color:var(--indigo);font-weight:800}
+
+  /* ---------- floating WA ---------- */
+  .fab{position:fixed;right:20px;bottom:20px;z-index:80;display:inline-flex;align-items:center;gap:10px;background:var(--wa);color:#04210f;border:var(--bd);border-radius:99px;padding:13px 18px 13px 14px;font-weight:800;box-shadow:var(--shadow);transition:transform .18s var(--ease),box-shadow .18s var(--ease)}
+  .fab:hover{transform:translate(-2px,-2px);box-shadow:var(--shadow-lg)}
+  .fab svg{width:28px;height:28px}
+  .fab .txt{font-size:14px}
+
+  /* ---------- reveal ---------- */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ---------- responsive ---------- */
+  @media(max-width:960px){
+    .nav-links{display:none}
+    .nav-cta .btn:not(.burger){display:none}
+    .burger{display:block}
+    .hero-grid,.about-grid,.visit-grid{grid-template-columns:1fr}
+    .hero-visual{margin-top:42px;max-width:420px;margin-left:auto;margin-right:auto}
+    .bento,.phones,.quotes{grid-template-columns:1fr 1fr}
+    .gallery{grid-template-columns:repeat(2,1fr)}
+    .stats{grid-template-columns:1fr 1fr;gap:34px 24px}
+    .mobile-menu{display:flex;flex-direction:column;background:var(--card);border-bottom:var(--bd);max-height:0;overflow:hidden;transition:max-height .35s var(--ease)}
+    .mobile-menu.open{max-height:440px}
+    .mobile-menu a{padding:15px 22px;border-bottom:2px solid #00000010;font-weight:600}
+    .mobile-menu .btn{margin:16px 22px 22px;justify-content:center}
+  }
+  @media(max-width:560px){
+    .bento,.phones,.quotes{grid-template-columns:1fr}
+    .foot-grid{grid-template-columns:1fr;gap:28px}
+    .sec{padding:64px 0}
+    .st-repair{right:-8px}.st-rating{left:-6px}
+    .fab .txt{display:none}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;scroll-behavior:auto}
+    .reveal{opacity:1;transform:none}
+  }
+  :focus-visible{outline:3px solid var(--indigo);outline-offset:3px;border-radius:6px}
+</style>
+</head>
+<body>
+
+<!-- ============ TICKER ============ -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track" id="ticker">
+    <span><b>★</b> No-cost EMI on all flagships <b>★</b> Same-day screen repairs <b>★</b> Best exchange value in Kochi <b>★</b> Genuine, sealed &amp; warranted <b>★</b> Free screen guard with every phone <b>★</b> Open 7 days a week</span>
+  </div>
+</div>
+
+<!-- ============ NAV ============ -->
+<header>
+  <div class="wrap nav">
+    <a href="#home" class="logo"><span class="mark"><span>G</span></span>GIZMO</a>
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#featured">Phones</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#visit">Visit Us</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="https://wa.me/917025012345?text=Hi%20GIZMO%2C%20I%27d%20like%20to%20know%20more%20about%20your%20phones." target="_blank" rel="noopener" class="btn btn-wa">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.607z"/></svg>
+        WhatsApp
+      </a>
+      <button class="burger" id="burger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#featured">Phones</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#visit">Visit Us</a>
+    <a href="https://wa.me/917025012345" target="_blank" rel="noopener" class="btn btn-wa">Message on WhatsApp</a>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+  <div class="wrap hero-grid">
+    <div class="reveal">
+      <span class="pill-tag">📍 Edappally · Kochi</span>
+      <h1>Your next phone, <span class="hl">picked the&nbsp;happy way.</span></h1>
+      <p class="lead">GIZMO Mobiles is Kochi's friendliest phone store — every brand on display, genuine accessories, same-day repairs and zero pushy sales. Pop in, or just say hi on WhatsApp.</p>
+      <div class="hero-cta">
+        <a href="https://wa.me/917025012345?text=Hi%20GIZMO%2C%20I%27m%20looking%20for%20a%20phone." target="_blank" rel="noopener" class="btn btn-wa">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24z"/></svg>
+          Chat on WhatsApp
+        </a>
+        <a href="tel:+917025012345" class="btn btn-indigo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+          Call now
+        </a>
+        <a href="#visit" class="btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Directions
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal">
+      <div class="photo-card">
+        <img src="https://images.unsplash.com/photo-1567581935884-3349723552ca?auto=format&fit=crop&w=900&q=80" alt="Inside GIZMO Mobiles store with phones on display" data-fb="Inside the store">
+      </div>
+      <div class="sticker st-rating"><span class="big">4.9★</span><div style="font-size:11px;font-family:'DM Mono'">Google<br>rating</div></div>
+      <div class="sticker st-repair">⚡ Same-day repairs</div>
+      <div class="sticker st-emi">💳 No-cost EMI</div>
+    </div>
+  </div>
+
+  <div class="wrap trust" style="margin-top:46px">
+    <span class="t reveal"><span class="dot" style="background:var(--mint)"></span> 100% Genuine</span>
+    <span class="t reveal"><span class="dot" style="background:var(--coral)"></span> Brand Warranty</span>
+    <span class="t reveal"><span class="dot" style="background:var(--sun)"></span> Easy EMI</span>
+    <span class="t reveal"><span class="dot" style="background:var(--sky)"></span> Best Exchange</span>
+    <span class="t reveal"><span class="dot" style="background:var(--indigo)"></span> Open 7 Days</span>
+  </div>
+</section>
+
+<!-- ============ BRAND TICKER ============ -->
+<div class="brands" aria-hidden="true">
+  <div class="brands-track" id="brands">
+    <span>Apple <i>◆</i> Samsung <i>◆</i> OnePlus <i>◆</i> Xiaomi <i>◆</i> vivo <i>◆</i> OPPO <i>◆</i> realme <i>◆</i> Google Pixel <i>◆</i> Nothing <i>◆</i> Motorola <i>◆</i> iQOO <i>◆</i></span>
+  </div>
+</div>
+
+<!-- ============ ABOUT ============ -->
+<section class="sec" id="about">
+  <div class="wrap about-grid">
+    <div class="about-media reveal">
+      <img src="https://images.unsplash.com/photo-1556656793-08538906a9f8?auto=format&fit=crop&w=900&q=80" alt="Customer being helped at GIZMO Mobiles" data-fb="Helping a customer">
+    </div>
+    <div class="body reveal">
+      <span class="label eyebrow-tag">Who we are</span>
+      <h2 style="font-size:clamp(30px,4vw,48px);margin:16px 0 18px">A phone shop that actually feels friendly.</h2>
+      <p>Since 2013, GIZMO has been the spot Edappally trusts for a straight answer and a fair deal. We're phone people first — we'd rather find you the right device than the priciest one.</p>
+      <p>Every phone is sealed, genuine and brand-warranted. Cracked screen or weak battery? Our in-house techs fix most issues the same day, while you grab a chai next door.</p>
+      <ul class="checklist">
+        <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="3.4"><path d="M20 6L9 17l-5-5"/></svg></span> Sealed, genuine, brand-warranted phones</li>
+        <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="3.4"><path d="M20 6L9 17l-5-5"/></svg></span> Same-day repairs by certified techs</li>
+        <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="3.4"><path d="M20 6L9 17l-5-5"/></svg></span> The best exchange value in town</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="sec" id="services">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="label eyebrow-tag">What we do</span>
+      <h2>Everything mobile, all in one shop.</h2>
+      <p>From the newest launch to a 6 PM cracked screen — we've got it sorted.</p>
+    </div>
+    <div class="bento">
+      <div class="scard reveal"><div class="ic">📱</div><h3>Latest smartphones</h3><p>Every new launch from Apple, Samsung, OnePlus and more — sealed and ready to take home today.</p></div>
+      <div class="scard reveal"><div class="ic">🎧</div><h3>Genuine accessories</h3><p>Cases, chargers, earbuds, smartwatches and power banks — all original, all in stock.</p></div>
+      <div class="scard reveal"><div class="ic">🛠️</div><h3>Repairs &amp; service</h3><p>Screen, battery, charging-port and water-damage fixes — most done the same day.</p></div>
+      <div class="scard reveal"><div class="ic">💳</div><h3>Easy EMI &amp; finance</h3><p>No-cost EMI on leading cards plus instant finance so your dream phone fits your budget.</p></div>
+      <div class="scard reveal"><div class="ic">🔄</div><h3>Exchange &amp; buyback</h3><p>Top value for your old phone, applied instantly toward your shiny new one.</p></div>
+      <div class="scard reveal"><div class="ic">🛡️</div><h3>Warranty &amp; care</h3><p>Full brand warranty plus optional screen-protection and extended-care plans.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURED PHONES ============ -->
+<section class="sec" id="featured">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="label eyebrow-tag">In store now</span>
+      <h2>A few favourites on the shelf.</h2>
+      <p>Come in for a hands-on demo, or ping us on WhatsApp for today's best price.</p>
+    </div>
+    <div class="phones">
+      <div class="pcard reveal">
+        <div class="pic"><span class="ptag">Flagship</span><img src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?auto=format&fit=crop&w=700&q=80" alt="Pro flagship smartphone" data-fb="Flagship"></div>
+        <div class="body">
+          <h3>Pro flagship line-up</h3>
+          <div class="specs"><span>6.7" OLED</span><span>200MP cam</span><span>5G</span></div>
+          <a href="https://wa.me/917025012345?text=Hi%20GIZMO%2C%20price%20for%20the%20Pro%20flagship%3F" target="_blank" rel="noopener" class="ask">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24z"/></svg>
+            Ask price
+          </a>
+        </div>
+      </div>
+      <div class="pcard reveal">
+        <div class="pic"><span class="ptag">Best value</span><img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=700&q=80" alt="Everyday smartphone" data-fb="Everyday"></div>
+        <div class="body">
+          <h3>Everyday all-rounder</h3>
+          <div class="specs"><span>120Hz</span><span>5000mAh</span><span>Fast charge</span></div>
+          <a href="https://wa.me/917025012345?text=Hi%20GIZMO%2C%20price%20for%20the%20everyday%20all-rounder%3F" target="_blank" rel="noopener" class="ask">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24z"/></svg>
+            Ask price
+          </a>
+        </div>
+      </div>
+      <div class="pcard reveal">
+        <div class="pic"><span class="ptag">New launch</span><img src="https://images.unsplash.com/photo-1574944985070-8f3ebc6b79d2?auto=format&fit=crop&w=700&q=80" alt="Foldable smartphone" data-fb="Foldable"></div>
+        <div class="body">
+          <h3>Foldable &amp; flip series</h3>
+          <div class="specs"><span>Foldable</span><span>Dual screen</span><span>Premium</span></div>
+          <a href="https://wa.me/917025012345?text=Hi%20GIZMO%2C%20price%20for%20the%20foldable%20series%3F" target="_blank" rel="noopener" class="ask">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24z"/></svg>
+            Ask price
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section class="sec" id="gallery">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="label eyebrow-tag">Step inside</span>
+      <h2>Our store, inside &amp; out.</h2>
+      <p>Bright, friendly and stocked floor to ceiling — come see it yourself.</p>
+    </div>
+    <div class="gallery reveal">
+      <div class="gal g-wide g-tall"><img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=900&q=80" alt="Storefront" data-fb="Storefront — outside"><span class="cap">Storefront, Edappally</span></div>
+      <div class="gal"><img src="https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?auto=format&fit=crop&w=600&q=80" alt="Phones on display" data-fb="On display"><span class="cap">Latest models</span></div>
+      <div class="gal"><img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=600&q=80" alt="Accessories" data-fb="Accessories"><span class="cap">Accessories wall</span></div>
+      <div class="gal g-wide"><img src="https://images.unsplash.com/photo-1607936854279-55e8a4c64888?auto=format&fit=crop&w=900&q=80" alt="Repair desk" data-fb="Repair desk"><span class="cap">In-house repairs</span></div>
+      <div class="gal"><img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=600&q=80" alt="Friendly staff" data-fb="Our team"><span class="cap">Friendly staff</span></div>
+      <div class="gal"><img src="https://images.unsplash.com/photo-1580910051074-3eb694886505?auto=format&fit=crop&w=600&q=80" alt="Smartphone close up" data-fb="New arrivals"><span class="cap">Fresh arrivals</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATS ============ -->
+<section class="sec stats-block">
+  <div class="wrap">
+    <div class="stats">
+      <div class="reveal"><div class="num">20k+</div><div class="lbl">Phones sold</div></div>
+      <div class="reveal"><div class="num">98%</div><div class="lbl">Repairs same day</div></div>
+      <div class="reveal"><div class="num">50+</div><div class="lbl">Brands in stock</div></div>
+      <div class="reveal"><div class="num">4.9★</div><div class="lbl">Customer rating</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="label eyebrow-tag">Loved in Kochi</span>
+      <h2>Don't take our word for it.</h2>
+    </div>
+    <div class="quotes">
+      <div class="quote reveal">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <p>"Got my new phone with no-cost EMI and a great exchange price for my old one. They explained everything patiently — zero pressure."</p>
+        <div class="who"><div class="av">AR</div><div><div class="nm">Arjun R.</div><div class="mt">Edappally</div></div></div>
+      </div>
+      <div class="quote reveal">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <p>"Cracked screen fixed in under an hour while I had lunch nearby. Genuine part, honest price. My go-to shop now."</p>
+        <div class="who"><div class="av">FN</div><div><div class="nm">Fathima N.</div><div class="mt">Palarivattom</div></div></div>
+      </div>
+      <div class="quote reveal">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <p>"They talked me out of a costlier model I didn't need. Honest advice without the upsell — so rare and refreshing."</p>
+        <div class="who"><div class="av">SV</div><div><div class="nm">Sanjay V.</div><div class="mt">Kakkanad</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VISIT / MAP ============ -->
+<section class="sec" id="visit">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="label eyebrow-tag">Find us</span>
+      <h2>Come say hi 👋</h2>
+      <p>We're right by Lulu Mall in Edappally. Easy parking, easy to find.</p>
+    </div>
+    <div class="visit-grid">
+      <div class="info-card reveal">
+        <div class="info-row">
+          <div class="ic">📍</div>
+          <div><div class="t">Address</div><div class="d">GIZMO Mobiles<br><span>1st Floor, NH Bypass, Edappally,<br>near Lulu Mall, Kochi, Kerala 682024</span></div></div>
+        </div>
+        <div class="info-row">
+          <div class="ic">🕙</div>
+          <div><div class="t">Open hours</div><div class="d">Mon – Sat · 10:00 AM – 9:30 PM<br><span>Sunday · 11:00 AM – 8:00 PM</span></div></div>
+        </div>
+        <div class="info-row">
+          <div class="ic">📞</div>
+          <div><div class="t">Call / WhatsApp</div><div class="d">+91 70250 12345<br><span>hello@gizmomobiles.in</span></div></div>
+        </div>
+        <div class="info-actions">
+          <a href="https://wa.me/917025012345?text=Hi%20GIZMO%21" target="_blank" rel="noopener" class="btn btn-wa">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24z"/></svg>
+            WhatsApp
+          </a>
+          <a href="tel:+917025012345" class="btn btn-indigo">Call</a>
+          <a href="https://www.google.com/maps/dir/?api=1&destination=Lulu+Mall+Edappally+Kochi" target="_blank" rel="noopener" class="btn btn-coral">Get directions</a>
+        </div>
+      </div>
+      <div class="map-box reveal">
+        <iframe title="GIZMO Mobiles location map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Lulu%20Mall%20Edappally%20Kochi%20Kerala&output=embed"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SOCIAL ============ -->
+<section class="sec" style="padding-top:0">
+  <div class="wrap">
+    <div class="social-band reveal">
+      <div>
+        <span class="label" style="color:var(--sun)">Stay in the loop</span>
+        <h3 style="margin-top:10px">Follow GIZMO for launches &amp; offers.</h3>
+        <div class="sub">New drops, repair tips and festival deals — first on our socials.</div>
+      </div>
+      <div class="socials">
+        <a class="soc" href="#" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect class="fg" x="2.5" y="2.5" width="19" height="19" rx="5" stroke-width="2"/><circle class="fg" cx="12" cy="12" r="4" stroke-width="2"/><circle class="fgf" cx="17.3" cy="6.7" r="1.2"/></svg></a>
+        <a class="soc" href="#" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path class="fgf" d="M22 12a10 10 0 10-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0022 12z"/></svg></a>
+        <a class="soc" href="#" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path class="fgf" d="M23.5 6.2a3 3 0 00-2.12-2.12C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.38.58A3 3 0 00.5 6.2 31 31 0 000 12a31 31 0 00.5 5.8 3 3 0 002.12 2.12C4.5 20.5 12 20.5 12 20.5s7.5 0 9.38-.58a3 3 0 002.12-2.12A31 31 0 0024 12a31 31 0 00-.5-5.8zM9.6 15.5v-7l6.2 3.5z"/></svg></a>
+        <a class="soc" href="https://wa.me/917025012345" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path class="fgf" d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24z"/></svg></a>
+        <a class="soc" href="#" target="_blank" rel="noopener" aria-label="Google reviews"><svg viewBox="0 0 24 24"><path class="fgf" d="M12 2l2.9 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 7.1-1.01z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="intro">
+        <a href="#home" class="logo"><span class="mark"><span>G</span></span>GIZMO</a>
+        <p>Kochi's happiest phone store in Edappally — sales, accessories, repairs, EMI and exchange, all under one friendly roof.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Explore</h4>
+        <a href="#about">About us</a>
+        <a href="#services">Services</a>
+        <a href="#featured">Phones in store</a>
+        <a href="#gallery">Gallery</a>
+      </div>
+      <div class="foot-col">
+        <h4>Visit &amp; contact</h4>
+        <a href="#visit">Edappally, Kochi</a>
+        <a href="tel:+917025012345">+91 70250 12345</a>
+        <a href="https://wa.me/917025012345" target="_blank" rel="noopener">WhatsApp us</a>
+        <a href="mailto:hello@gizmomobiles.in">hello@gizmomobiles.in</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 GIZMO Mobiles. All rights reserved. · This is a demo website.</span>
+      <span class="credit">Website crafted by <a href="https://empoweraitech.in" target="_blank" rel="noopener">Empower AI Tech</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ FLOATING WHATSAPP ============ -->
+<a class="fab" href="https://wa.me/917025012345?text=Hi%20GIZMO%2C%20I%20have%20a%20question." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="#04210f"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.017-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+  <span class="txt">Chat with us</span>
+</a>
+
+<script>
+  // mobile menu
+  const burger = document.getElementById('burger');
+  const menu = document.getElementById('mobileMenu');
+  burger.addEventListener('click', () => menu.classList.toggle('open'));
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
+
+  // seamless tickers
+  ['ticker','brands'].forEach(id => { const el = document.getElementById(id); if(el) el.innerHTML += el.innerHTML; });
+
+  // scroll reveal
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:0.12});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // graceful image fallback — no broken icons
+  const fbColors = ['#EAF0FF','#FFEFF2','#FFF6E6','#E6FBF4','#EFEBFF','#E9F6FF'];
+  document.querySelectorAll('img[data-fb]').forEach((img,i) => {
+    img.addEventListener('error', function(){
+      const label = this.getAttribute('data-fb') || 'GIZMO';
+      const fb = document.createElement('div');
+      fb.className = 'imgfb';
+      fb.style.background = fbColors[i % fbColors.length];
+      fb.innerHTML = '<b>'+label+'</b>';
+      this.replaceWith(fb);
+    }, {once:true});
+  });
+</script>
+</body>
+</html>
